@@ -17,13 +17,17 @@ const Hero = () => {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Creative Web Developer
+            Akshay Jegaonkar
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Building beautiful, responsive, and user-friendly web applications
-            with modern technologies.
+          <p className="text-xl md:text-2xl text-gray-600 mb-6">
+            Software Developer
           </p>
-          
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Enthusiastic software developer with expertise in Python, Django, and SQL, 
+            and a strong foundation in front-end frameworks like React.js. Passionate 
+            about learning new technologies, system integration, and automation.
+          </p>
+
           <Button 
             onClick={scrollToProjects}
             size="lg"

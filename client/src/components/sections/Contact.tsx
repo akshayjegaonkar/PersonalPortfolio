@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import AnimatedSection from "../AnimatedSection";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Phone } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -47,15 +47,19 @@ const Contact = () => {
               </div>
 
               <div className="flex flex-col space-y-4">
-                <a href="mailto:contact@example.com" className="flex items-center text-gray-600 hover:text-primary">
+                <a href="mailto:akshayjegaonkar@gmail.com" className="flex items-center text-gray-600 hover:text-primary">
                   <Mail className="h-5 w-5 mr-2" />
-                  contact@example.com
+                  akshayjegaonkar@gmail.com
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-primary">
+                <a href="tel:+917775938882" className="flex items-center text-gray-600 hover:text-primary">
+                  <Phone className="h-5 w-5 mr-2" />
+                  +91-7775938882
+                </a>
+                <a href="https://github.com/jegaonkar" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-primary">
                   <Github className="h-5 w-5 mr-2" />
                   GitHub Profile
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-primary">
+                <a href="https://linkedin.com/in/akshay-jegaonkar" target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-primary">
                   <Linkedin className="h-5 w-5 mr-2" />
                   LinkedIn Profile
                 </a>

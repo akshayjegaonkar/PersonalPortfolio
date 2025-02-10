@@ -1,26 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AnimatedSection from "../AnimatedSection";
-import { SiReact, SiTypescript, SiTailwindcss } from "react-icons/si";
+import { SiReact, SiTypescript, SiTailwindcss, SiPython, SiDjango, SiSqlite, SiHtml5, SiCss3, SiBootstrap, SiJavascript } from "react-icons/si";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A modern e-commerce platform built with React and TypeScript",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    icons: [SiReact, SiTypescript, SiTailwindcss]
+    title: "EmpTrack — Employee Management System",
+    description: "Built a system for adding, removing, and managing employees with secure authentication, role-based access, and real-time updates. Features include department assignments, salary management, and a user-friendly dashboard.",
+    tech: ["Django", "HTML", "CSS", "Bootstrap", "JavaScript", "SQLite"],
+    icons: [SiDjango, SiHtml5, SiCss3, SiBootstrap, SiJavascript, SiSqlite]
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    icons: [SiReact, SiTypescript, SiTailwindcss]
-  },
-  {
-    title: "Portfolio Website",
-    description: "Personal portfolio website showcasing projects and skills",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    icons: [SiReact, SiTypescript, SiTailwindcss]
+    title: "Tweeeet — Microblogging Platform",
+    description: "Developed a Twitter-like social media platform, enhancing real-time interactions, user engagement, and responsive design. Implemented authentication, post creation, and follow system features.",
+    tech: ["Django", "HTML", "CSS", "Bootstrap", "JavaScript", "SQLite"],
+    icons: [SiDjango, SiHtml5, SiCss3, SiBootstrap, SiJavascript, SiSqlite]
   }
 ];
 
@@ -32,7 +26,7 @@ const Projects = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <AnimatedSection key={index}>
               <Card className="h-full hover:shadow-lg transition-shadow">

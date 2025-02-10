@@ -7,17 +7,32 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
 export default defineConfig({
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "client", "src"),
-      "@shared": path.resolve(__dirname, "shared"),
-    },
+      "@": path.resolve(__dirname, "client/src"),
+      "@shared": path.resolve(__dirname, "shared")
+    }
   },
-  root: path.resolve(__dirname, "client"),
+  // Explicit public directory for static assets
+  publicDir: path.resolve(__dirname, "client/public"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
+    // Ensure proper chunking for Vercel
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          vendor: ['lodash', 'moment']
+        }
+      }
+    }
   },
+  // Vercel-specific optimizations
+  optimizeDeps: {
+    include: ['react', 'react-dom']
+  }
 });

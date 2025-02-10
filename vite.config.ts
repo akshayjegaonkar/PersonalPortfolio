@@ -10,19 +10,23 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react(), runtimeErrorOverlay(), themePlugin()],
+  root: path.resolve(__dirname, "client"),  // Explicit root directory
+  base: '/',  // Base path for assets
+  
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
       "@shared": path.resolve(__dirname, "shared")
     }
   },
-  // Explicit public directory for static assets
-  publicDir: path.resolve(__dirname, "client/public"),
+
   build: {
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-    // Ensure proper chunking for Vercel
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "client/index.html")  // Explicit entry point
+      },
       output: {
         manualChunks: {
           react: ['react', 'react-dom'],
@@ -31,7 +35,7 @@ export default defineConfig({
       }
     }
   },
-  // Vercel-specific optimizations
+
   optimizeDeps: {
     include: ['react', 'react-dom']
   }
